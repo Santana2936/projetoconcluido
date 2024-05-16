@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclamações Escolares</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<style>
+     /* Reset de estilos */
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f8ff; /* Azul claro */
+        color: #000;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #9370db, #8a2be2); /* Gradiente de roxo */
+    }
+
+    .container {
+        max-width: 600px;
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Centraliza o conteúdo */
+        animation: slide-down 0.3s ease-out;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #9370db; /* Roxo */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .instagram {
+        margin-left: 10px; /* Espaçamento adicional */
+    }
+
+    .instagram img {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .instagram a {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .titulo {
+        flex: 1;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        font-weight: bold;
+        animation: flash 1.5s infinite;
+    }
+
+    section {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f0f8ff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center; /* Centraliza o conteúdo */
+        animation: slide-down 0.3s ease-out;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #9370db; /* Roxo */
+        font-size: 24px; /* Tamanho da fonte aumentado */
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        text-align: left; /* Alinha os campos à esquerda */
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #8a2be2; /* Roxo mais escuro */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    textarea:focus {
+        border-color: #9370db; /* Roxo */
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #9370db; /* Roxo */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        animation: pulse 1s infinite;
+    }
+
+    button:hover {
+        background-color: #8a2be2; /* Roxo mais escuro */
+    }
+
+    .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .show-login-form.active .login-container {
+        display: block;
+    }
+
+    .login-form {
+        text-align: left;
+    }
+
+    @keyframes slide-down {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes flash {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    };
+</style>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://s4.aconvert.com/convert/p3r68-cdx67/aczwu-9el47.png" alt="Made by- Italo Santana (3º INFO CETEP)">
+            </div>
+            <div class="titulo">Geração Consciente</div>
+            <div class="instagram">
+                <a href="https://www.instagram.com/geracaoconsciente_cetep?igsh=d2Nwdmg1Zmhwcmp0"><img src="https://www.kindpng.com/picc/m/1-19853_instagram-logo-black-transparent-instagram-logo-black-png.png" alt="Instagram"></a>
+            </div>
+        </header>
+        <section id="public-complaints">
+            <h2>Faça sua reclamação:</h2>
+            <form id="complaint-form">
+                <div class="input-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="grade">Série:</label>
+                    <input type="text" id="grade" name="grade" required>
+                </div>
+                <div class="input-group">
+                    <label for="anonymous">Reclamação anônima:</label>
+                    <input type="checkbox" id="anonymous" name="anonymous" onclick="toggleNameField()">
+                </div>
+                <div class="input-group" id="name-group">
+                    <label for="description">Descrição:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="suggestion">Sugestão de como resolver:</label>
+                    <textarea id="suggestion" name="suggestion" rows="2"></textarea>
+                </div>
+                <button type="submit">Enviar reclamação</button>
+            </form>
+        </section>
+        <section id="admin-panel">
+            <h2>Painel de Administração</h2>
+            <button id="login-button">Login para líderes</button>
+        </section>
+    </div>
+    <div class="show-login-form">
+        <div class="login-container">
+            <div class="login-form" id="login-form">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="username">Usuário:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAKTpWeLTIZvUZUbkgt_rLwCsUBckR_mNI",
+            authDomain: "gremio-72f62.firebaseapp.com",
+            projectId: "gremio-72f62",
+            storageBucket: "gremio-72f62.appspot.com",
+            messagingSenderId: "441261331441",
+            appId: "1:441261331441:web:8d4cb9f65e7e6c83d42a50",
+            measurementId: "G-SDYV8MJNXL"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Função para desativar o campo de nome quando a reclamação for anônima
+        function toggleNameField() {
+            var nameField = document.getElementById('name');
+            nameField.disabled = document.getElementById('anonymous').checked;
+        }
+
+        // Enviar reclamação
+        document.getElementById('complaint-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            // Aqui você pode adicionar o código para enviar os dados do formulário para o servidor
+            // Por exemplo, você pode usar AJAX ou fetch() para enviar os dados para o servidor e processá-los lá
+            // Depois de enviar,
+        });
+    </script>
+</body>
+</html>
